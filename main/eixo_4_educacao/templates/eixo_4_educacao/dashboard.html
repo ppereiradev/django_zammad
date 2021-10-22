@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load plotly_dash %}
+
+{% block header %}
+    <link href="{% static 'eixo_4_educacao/css/style.css' %}" rel="stylesheet" type="text/css">
+    {% plotly_header %}
+{% endblock header %}
+
+{% block name_dashboard %}
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <h1 class="dashboard_title">Informações sobre Educação na UFRPE</h1>
+    </nav>
+{% endblock name_dashboard %}
+
+{% block content %}
+    <div class="{% plotly_class name='eixo_4_educacao' %}">
+        {% plotly_direct name="eixo_4_educacao" %}
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    {% plotly_footer %}
+{% endblock footer %}
+
