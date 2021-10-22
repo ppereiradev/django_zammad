@@ -11399,8 +11399,8 @@ header.masthead {
   background-size: cover;
 
   background-blend-mode: overlay;
-  /*background-image: url(http://br992.teste.website/~desco791/wpsmartcampus/wp-content/uploads/2021/01/coding-background-texture.jpg),radial-gradient(circle at center,#248495 9%,#462d66 100%)!important;*/
-  background-image: url(http://br992.teste.website/~desco791/wpsmartcampus/wp-content/uploads/2021/01/coding-background-texture.jpg),radial-gradient(circle at center,#FEBD11 9%,#db7100 100%)!important;
+  background-image: url(http://br992.teste.website/~desco791/wpsmartcampus/wp-content/uploads/2021/01/coding-background-texture.jpg),radial-gradient(circle at center,#248495 9%,#462d66 100%)!important;
+  /*background-image: url(http://br992.teste.website/~desco791/wpsmartcampus/wp-content/uploads/2021/01/coding-background-texture.jpg),radial-gradient(circle at center,#FEBD11 9%,#db7100 100%)!important;*/
   
 }
 header.masthead h1, header.masthead .h1 {
