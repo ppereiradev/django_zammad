@@ -158,10 +158,10 @@ row0 = html.Div(
     [
         dbc.Row(
             [
-                dbc.Col(dbc.Card(content_mensal_matricula_row0, className='shadow cards-info-docentes')),
-                dbc.Col(dbc.Card(content_media_matricula_row0, className='shadow cards-info-docentes')),
-                dbc.Col(dbc.Card(content_evasao_anual_row0, className='shadow cards-info-docentes')),
-                dbc.Col(dbc.Card(content_ultimo_semestre_row0, className='shadow cards-info-docentes')),
+                dbc.Col(dbc.Card(content_mensal_matricula_row0, className='shadow cards-info-docentes'), className='mb-4 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_media_matricula_row0, className='shadow cards-info-docentes'), className='mb-4 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_evasao_anual_row0, className='shadow cards-info-docentes'), className='mb-4 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_ultimo_semestre_row0, className='shadow cards-info-docentes'), className='mb-4 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12'),
             ],
             className="mb-4",
         ),
@@ -183,24 +183,7 @@ content_evasao_curso_row1 = [
     ),
 ]
 
-row1 = html.Div(
-    [
-        dbc.Row(
-            [
-                dbc.Col(dbc.Card(content_evasao_curso_row1, className='card border-light shadow cards-chart-docentes'), className='col-12'),
-            ],
-            className="mb-4",
-        ),
-    ]
-)
-
-''' END CHART CARDS' CONTENT '''
-##############################
-
-
-######### THIRD ROW #########
-''' CHART CARDS' CONTENT '''
-content_evasao_sexo_row2 = [
+content_evasao_sexo_row1 = [
     dbc.CardHeader("Média de Evasão Semestral de Alunos por Sexo", className='cards-content-chart-header-docentes'),
     dbc.CardBody(
         [
@@ -210,7 +193,7 @@ content_evasao_sexo_row2 = [
 ]
 
 
-content_matricula_sexo_row2 = [
+content_matricula_sexo_row1 = [
     dbc.CardHeader("Média de Matrícula Semestral de Alunos por Sexo", className='cards-content-chart-header-docentes'),
     dbc.CardBody(
         [
@@ -220,24 +203,26 @@ content_matricula_sexo_row2 = [
     ),
 ]
 
-
-row2 = html.Div(
+row1 = html.Div(
     [
         dbc.Row(
             [
-                dbc.Col(dbc.Card(content_evasao_sexo_row2, className='card border-light shadow cards-chart-docentes'), className='col-6'),
-                dbc.Col(dbc.Card(content_matricula_sexo_row2, className='card border-light shadow cards-chart-docentes'), className='col-6'),
+                dbc.Col(dbc.Card(content_evasao_curso_row1, className='card border-light shadow cards-chart-docentes'), className='mb-4 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_evasao_sexo_row1, className='card border-light shadow cards-chart-docentes'), className='mb-4 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_matricula_sexo_row1, className='card border-light shadow cards-chart-docentes'), className='mb-4 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
             ],
             className="mb-4",
         ),
     ]
 )
+
 ''' END CHART CARDS' CONTENT '''
 ##############################
 
+
 ''' final layout render '''
 layout = html.Div([
-    html.Div([row0, row1, row2])
+    html.Div([row0, row1])
 ],)
 
 
