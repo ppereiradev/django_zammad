@@ -155,9 +155,9 @@ row1 = html.Div(
     [
         dbc.Row(
             [
-                dbc.Col(dbc.Card(content_speed_row1, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-4'),
-                dbc.Col(dbc.Card(content_pie_row1, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-4'),
-                dbc.Col(dbc.Card(content_bar_row1, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-4'),
+                dbc.Col(dbc.Card(content_speed_row1, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_pie_row1, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_bar_row1, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
             ],
             className="mb-4",
         ),
@@ -210,8 +210,8 @@ row2 = html.Div(
     [
         dbc.Row(
             [
-                dbc.Col(dbc.Card(content_consumo_row2, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-6'),
-                dbc.Col(dbc.Card(content_media_row2, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-6'),
+                dbc.Col(dbc.Card(content_consumo_row2, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
+                dbc.Col(dbc.Card(content_media_row2, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'),
                 #dbc.Col(dbc.Card(content_media2_row2, className='card border-light shadow cards-chart-energia'), className='mb-4 col-xl-4'),
             ],
             className="mb-4",
