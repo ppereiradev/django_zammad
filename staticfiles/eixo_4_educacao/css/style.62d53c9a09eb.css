@@ -1,0 +1,91 @@
+.tab span {
+    font-weight:bold;
+    color:grey;
+}
+
+.tab--selected span {
+    font-weight:bold;
+    color:black;    
+}
+
+.dashboard_title {
+    font-family: 'Open Sans', sans-serif;
+    margin: auto;
+    color: #FEBD11;
+}
+
+.nav-link {
+    color: #FEBD11;
+}
+
+/***************************** odg *****************************/
+#progress-odg div {
+    background-color: #FEBD11;
+}
+
+.cards-content-info-header-odg:first-of-type {
+    font-weight:bold;
+    color:#FEBD11;
+    border-radius:10px 80px;
+}
+
+.cards-content-info-body-odg:first-of-type {
+    font-size:2em;
+    text-align:center;
+    color:#FEBD11;
+    border-radius:10px 80px;
+}
+
+.cards-info-odg:first-of-type {
+    border-left: 0.5rem solid 	#FEBD11;
+    height:100%;
+    border-radius: 15px 50px;
+}
+
+.cards-content-chart-header-odg:first-of-type {
+    font-weight:bold;
+    color:#FEBD11;
+    border-radius:10px 80px;
+}
+
+.cards-chart-odg:first-of-type {
+    height:100%;
+    border-radius: 15px 50px;
+}
+/****************************************************************/
+
+/***************************** ÁGUA *****************************/
+#progress-docentes div {
+    background-color: #0B2341;
+}
+
+.cards-content-info-header-docentes:first-of-type {
+    font-weight:bold;
+    color:#0B2341;
+    border-radius:10px 80px;
+}
+
+.cards-content-info-body-docentes:first-of-type {
+    font-size:2em;
+    text-align:center;
+    color:#0B2341;
+    border-radius:10px 80px;
+}
+
+.cards-info-docentes:first-of-type {
+    border-left: 0.5rem solid 	#0B2341;
+    height:100%;
+    border-radius: 15px 50px;
+}
+
+.cards-content-chart-header-docentes:first-of-type {
+    font-weight:bold;
+    color:#0B2341;
+    border-radius:10px 80px;
+}
+
+.cards-chart-docentes:first-of-type {
+    height:100%;
+    border-radius: 15px 50px;
+}
+/****************************************************************/
