@@ -1,4 +1,3 @@
-import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -195,7 +194,7 @@ content_media_row2 = [
     ),
 ]
 
-
+""" 
 content_media2_row2 = [
     dbc.CardHeader("Consumo Médio - L", className='cards-content-chart-header-agua'),
     dbc.CardBody(
@@ -205,15 +204,15 @@ content_media2_row2 = [
         ]
     ),
 ]
-
+ """
 
 row2 = html.Div(
     [
         dbc.Row(
             [
-                dbc.Col(dbc.Card(content_consumo_row2, className='card border-light shadow cards-chart-agua'), className='mb-4 col-xl-4'),
-                dbc.Col(dbc.Card(content_media_row2, className='card border-light shadow cards-chart-agua'), className='mb-4 col-xl-4'),
-                dbc.Col(dbc.Card(content_media2_row2, className='card border-light shadow cards-chart-agua'), className='mb-4 col-xl-4'),
+                dbc.Col(dbc.Card(content_consumo_row2, className='card border-light shadow cards-chart-agua'), className='mb-4 col-xl-6'),
+                dbc.Col(dbc.Card(content_media_row2, className='card border-light shadow cards-chart-agua'), className='mb-4 col-xl-6'),
+                #dbc.Col(dbc.Card(content_media2_row2, className='card border-light shadow cards-chart-agua'), className='mb-4 col-xl-4'),
             ],
             className="mb-4",
         ),

@@ -119,12 +119,9 @@ This middleware should appear low down the middleware list.
 
 Install packages to make it work:
 ```console
-foo@bar:~$ pip install dash-bootstrap-components
-foo@bar:~$ pip install django_plotly_dash
-foo@bar:~$ pip install dpd-static-support
-foo@bar:~$ pip install dash --upgrade
-foo@bar:~$ pip install django-plotly-dash --upgrade
-foo@bar:~$ pip install whitenoise
+
+foo@bar:~$ pip install dash==1.20.0 dash-bootstrap-components==0.13.1 dash-core-components==1.16.0 dash-html-components==1.1.3 dash-renderer==1.9.1 dash-table==4.11.3 Django==3.2.8 django-plotly-dash==1.6.6 dpd-components==0.1.0 dpd-static-support==0.0.5 pandas==1.3.4 whitenoise==5.3.0
+
 ```
 
 AND MAYBE:

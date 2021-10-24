@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #bootstrap4
-    "bootstrap4",
+    #"bootstrap4",
 
     #django-plotly-dash
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
@@ -54,7 +54,7 @@ INSTALLED_APPS = [
 # DJANGO-PLOTLY-DASH
 # If using version 3.0 or later of Django, then the use of frames within HTML documents has to be enabled
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+#CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
