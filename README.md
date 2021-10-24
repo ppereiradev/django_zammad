@@ -118,13 +118,13 @@ MIDDLEWARE = [
 This middleware should appear low down the middleware list.
 
 Install packages to make it work:
+
 ```console
-
 foo@bar:~$ pip install dash==1.20.0 dash-bootstrap-components==0.13.1 dash-core-components==1.16.0 dash-html-components==1.1.3 dash-renderer==1.9.1 dash-table==4.11.3 Django==3.2.8 django-plotly-dash==1.6.6 dpd-components==0.1.0 dpd-static-support==0.0.5 pandas==1.3.4 whitenoise==5.3.0
-
 ```
 
 AND MAYBE:
+
 ```console
 foo@bar:~$ pip install pathlib ruamel-yaml sphinx django-plotly-dash
 ```
@@ -410,4 +410,91 @@ urlpatterns = [
 ]
 
 
+```
+
+# Deploy Heroku
+
+Creating the virtual environment
+```console
+foo@bar:~$ python3 -m venv ./venv --prompt django_heroku
+```
+
+Activate the virtual environment
+```console
+foo@bar:~$ source venv/bin/activate
+```
+
+Creating gitignore file
+```console
+foo@bar:~$ curl https://www.toptal.com/developers/gitignore/api/python,django > .gitignore
+```
+
+Creating application on heroku
+```console
+foo@bar:~$ heroku create project-name
+```
+
+Linking the heroku repository to application
+```console
+foo@bar:~$ heroku git:remote --app project-name
+```
+
+You can define it in a file named Procfile, which must be placed in my project root directory.
+
+The Procfile is a single, language-agnostic format for defining the processes making up your project. It will instruct Heroku on how to run your web server. Although working with the built-in development server isn’t the recommended practice for running a Django project in production, you can use it for this exercise:
+
+```console
+foo@bar:~$ echo "web: python manage.py runserver 0.0.0.0:\$PORT" > Procfile
+foo@bar:~$ git add Procfile
+foo@bar:~$ git commit -m "Specify the command to run your project"
+```
+To make the server accessible from the world outside of the Heroku cloud, you specify the address as 0.0.0.0 instead of the default localhost. It will bind the server on a public network interface. Heroku provides the port number through the PORT environment variable.
+
+You can now test this configuration by running your Django project locally using the Heroku CLI:
+```console
+foo@bar:~$ heroku local
+```
+By default, if you don’t specify a process type explicitly, it’ll run the web process. The heroku local command is the same as heroku local web. Also, if you don’t set the port number with the --port flag, then it’ll use the default port 5000.
+
+You’ve now specified the processes you want Heroku to run. When you open the URL http://localhost:5000/ in your web browser, then you should see the familiar rocket on the Django welcome page again. However, to access the same resource through the public interface at http://0.0.0.0:5000/, you’ll need to tweak the Django configuration, or else you’ll receive a Bad Request error.
+
+Setting django application to heroku
+```console
+foo@bar:~$ pip install django-heroku
+foo@bar:~$ pip freeze > requirements.txt
+```
+
+settings.py
+```console
+foo@bar:~$ echo "import django_heroku" >> settings.py
+foo@bar:~$ echo "django_heroku.settings(locals())" >> settings.py
+```
+
+Generating SECRET_KEY django
+```console
+foo@bar:~$ echo "SECRET_KEY='$(openssl rand -base64 32)'" > .env
+```
+
+In portfolio/settings.py, find the auto-generated line where Django defines the SECRET_KEY variable and comment it out:
+```python
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'django-insecure-#+^6_jx%8rmq9oa(frs7ro4pvr6qn7...
+```
+
+Setting the heroku env variable
+```console
+foo@bar:~$ heroku config:set SECRET_KEY='6aj9il2xu2vqwvnitsg@!+4-8t3%zwr@$agm7x%o%yb2t9ivt%'
+```
+
+Commiting the changes
+```console
+foo@bar:~$ git add .
+foo@bar:~$ git commit -m "Remove a hardcoded Django secret key"
+foo@bar:~$ git push heroku master
+```
+
+Finishing the configurations to run the dash application
+```console
+foo@bar:~$ heroku run python manage.py makemigrations
+foo@bar:~$ heroku run python manage.py migrate
 ```
