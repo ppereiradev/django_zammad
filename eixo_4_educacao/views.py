@@ -1,5 +1,0 @@
-from django.shortcuts import render
-
-# Create your views here.
-def dashboard(requests):
-    return render(requests,'eixo_4_educacao/dashboard.html')

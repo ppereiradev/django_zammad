@@ -1,0 +1,91 @@
+.tab span {
+    font-weight:bold;
+    color:grey;
+}
+
+.tab--selected span {
+    font-weight:bold;
+    color:black;    
+}
+
+.dashboard_title {
+    font-family: 'Open Sans', sans-serif;
+    margin: auto;
+    color: #ff6353;
+}
+
+.nav-link {
+    color: #ff6353;
+}
+
+/***************************** CHAMADOS *****************************/
+#progress-chamados div {
+    background-color: #ff6353;
+}
+
+.cards-content-info-header-chamados:first-of-type {
+    font-weight:bold;
+    color:#ff6353;
+    border-radius:10px 80px;
+}
+
+.cards-content-info-body-chamados:first-of-type {
+    font-size:2em;
+    text-align:center;
+    color:#ff6353;
+    border-radius:10px 80px;
+}
+
+.cards-info-chamados:first-of-type {
+    border-left: 0.5rem solid 	#ff6353;
+    height:100%;
+    border-radius: 15px 50px;
+}
+
+.cards-content-chart-header-chamados:first-of-type {
+    font-weight:bold;
+    color:#ff6353;
+    border-radius:10px 80px;
+}
+
+.cards-chart-chamados:first-of-type {
+    height:100%;
+    border-radius: 15px 50px;
+}
+/****************************************************************/
+
+/***************************** USUÁRIOS *****************************/
+#progress-usuarios div {
+    background-color: #ff6353;
+}
+
+.cards-content-info-header-usuarios:first-of-type {
+    font-weight:bold;
+    color:#ff6353;
+    border-radius:10px 80px;
+}
+
+.cards-content-info-body-usuarios:first-of-type {
+    font-size:2em;
+    text-align:center;
+    color:#ff6353;
+    border-radius:10px 80px;
+}
+
+.cards-info-usuarios:first-of-type {
+    border-left: 0.5rem solid 	#ff6353;
+    height:100%;
+    border-radius: 15px 50px;
+}
+
+.cards-content-chart-header-usuarios:first-of-type {
+    font-weight:bold;
+    color:#ff6353;
+    border-radius:10px 80px;
+}
+
+.cards-chart-usuarios:first-of-type {
+    height:100%;
+    border-radius: 15px 50px;
+}
+/****************************************************************/

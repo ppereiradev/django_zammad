@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} {% load bootstrap4 %} {% endcomment %}
+{% load plotly_dash %}
+
+{% block header %}
+    <link href="{% static 'zammad_dashboard/css/style.css' %}" rel="stylesheet" type="text/css">
+    {% plotly_header %}
+{% endblock header %}
+
+{% block name_dashboard %}
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <h1 class="dashboard_title">Informações sobre a Central de Serviços Digitais</h1>
+    </nav>
+{% endblock name_dashboard %}
+
+{% block content %}
+    <div class="{% plotly_class name='zammad_dashboard' %}">
+        {% plotly_direct name="zammad_dashboard" %}
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    {% plotly_footer %}
+{% endblock footer %}
+
