@@ -6,36 +6,34 @@ from dash.dependencies import Input, Output
 from .app import app
 from .apps import app_chamados, app_usuarios
 
+# It Returns a dictionary with all data needed to build the charts:
+#
+# dict = {
+#  'tempo-medio-fechar-chamado-hora': tempo_medio_fechar_chamado_hora,
+#  'tempo-medio-primeiro-contato-minuto': tempo_medio_primeiro_contato_minuto, 
+#  'df-created': df_created,
+#  'df-joined': df_joined,
+# }
+#
+from .data.get_data import cleaning_data
 
+clean_data = cleaning_data()
 
 app.layout = html.Div([
-    dbc.Tabs(
-    [
-        dbc.Tab(app_chamados.layout, label="Chamados", tab_style={"marginLeft": "auto"}),
-        dbc.Tab(app_usuarios.layout, label="Usuários"),
-    ],
-    className='mb-3',id='tabs-app'),
-
-    html.Div(id='tabs-content')
+    dbc.Tabs([
+            dbc.Tab(app_chamados.layout_chamados(clean_data), label="Chamados", tab_style={"marginLeft": "auto"}),
+            dbc.Tab(app_usuarios.layout_usuarios(clean_data), label="Usuários"),
+        ], className='mb-3',id='tabs-app'),
+    dcc.Interval(id='interval-component',interval=10*1000, n_intervals=0)
 ])
 
+@app.callback(Output('tabs-app', 'children'),
+              Input('interval-component', 'n_intervals'))
+def update_metrics(n):
 
-""" app.layout = html.Div([
-    dcc.Tabs(id="tabs-app", value='tab-1-energia', children=[
-        dcc.Tab(label='Energia', value='tab-1-energia'),
-        dcc.Tab(label='Água', value='tab-2-agua'),
-    ],className='mb-3'),
+    clean_data = cleaning_data()
 
-    html.Div(id='tabs-content')
-])
-
-@app.callback(Output('tabs-content', 'children'),
-              Input('tabs-app', 'value'))
-def render_content(tab):
-    if tab == 'tab-1-energia':
-        return app_energia.layout
-
-    elif tab == 'tab-2-agua':
-        return app_agua.layout
-
- """
+    return [
+            dbc.Tab(app_chamados.layout_chamados(clean_data), label="Chamados", tab_style={"marginLeft": "auto"}),
+            dbc.Tab(app_usuarios.layout_usuarios(clean_data), label="Usuários"),
+        ]

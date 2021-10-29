@@ -498,3 +498,5 @@ Finishing the configurations to run the dash application
 foo@bar:~$ heroku run python manage.py makemigrations
 foo@bar:~$ heroku run python manage.py migrate
 ```
+
+Tutorial: https://realpython.com/django-hosting-on-heroku/
